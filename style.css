@@ -1,0 +1,640 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #fff4e6;
+    font-family: 'Poppins', sans-serif;
+
+    background:
+    radial-gradient(
+        ellipse at 50% 85%,
+        #f6aa69,
+        transparent 55%
+    ),
+    linear-gradient(
+        145deg,
+        #8b43c7,
+        #51228a,
+        #241044
+    );
+}
+
+#sparkles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px 16px;
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    max-width: 520px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #ffdc94;
+}
+
+#counter {
+    font-weight: 600;
+}
+
+.story {
+    width: 100%;
+    max-width: 520px;
+    min-height: 580px;
+
+    display: grid;
+    place-items: center;
+}
+
+.slide {
+    grid-area: 1 / 1;
+    width: 100%;
+
+    padding: 25px 12px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(25px) scale(.97);
+
+    transition: .45s ease;
+    pointer-events: none;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(0) scale(1);
+
+    pointer-events: auto;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #ffdc94;
+    margin-bottom: 20px;
+}
+
+.dedication {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: #ffd77e;
+    margin-bottom: 12px;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(34px, 8vw, 52px);
+}
+
+h2 {
+    font-size: clamp(34px, 8vw, 45px);
+}
+
+h1 span, h2 span {
+    color: #fff0d7;
+}
+
+.subtitle {
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 330px;
+    margin: 15px auto;
+    color: #f7e4f5;
+}
+
+/* DIYA */
+
+.diya-scene {
+    position: relative;
+    width: 270px;
+    height: 260px;
+
+    margin: 15px auto;
+
+    display: grid;
+    place-items: center;
+}
+
+.ring {
+    position: absolute;
+    border: 1px dashed #ffe2a4;
+    border-radius: 50%;
+
+    animation: rotate 25s linear infinite;
+}
+
+.ring1 {
+    width: 215px;
+    height: 215px;
+}
+
+.ring2 {
+    width: 175px;
+    height: 175px;
+    animation-direction: reverse;
+}
+
+.lotus {
+    position: absolute;
+    font-size: 145px;
+    color: #ffdc94;
+    animation: rotate 35s linear infinite;
+}
+
+.flame {
+    position: absolute;
+    top: 83px;
+
+    width: 26px;
+    height: 43px;
+
+    border-radius: 80% 10% 70% 50%;
+
+    background: linear-gradient(
+        #fffbd0,
+        #ffe56a,
+        #ff982e
+    );
+
+    box-shadow: 0 0 25px #ffcf59;
+
+    animation: flicker .8s infinite alternate;
+}
+
+.diya {
+    position: absolute;
+    top: 115px;
+    font-size: 55px;
+    filter: drop-shadow(0 0 15px #ffca65);
+}
+
+.float {
+    position: absolute;
+    font-size: 20px;
+    animation: float 3s infinite ease-in-out;
+}
+
+.f1 { top: 15px; left: 120px; }
+.f2 { bottom: 15px; right: 120px; }
+.f3 { left: 5px; top: 115px; }
+.f4 { right: 5px; top: 115px; }
+
+.wish-line {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* SLIDE 2 */
+
+.heart {
+    font-size: 105px;
+    color: #ffd68c;
+    animation: heartbeat 1.5s infinite;
+    text-shadow: 0 0 30px #ffb9dc;
+}
+
+/* MESSAGES */
+
+.message {
+    max-width: 410px;
+    margin: 20px auto;
+
+    font-size: 13px;
+    line-height: 1.9;
+    color: #ffefd9;
+}
+
+.highlight {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #ffdc94;
+    margin-top: 20px;
+}
+
+/* SLIDE 3 */
+
+.wish-list {
+    display: grid;
+    gap: 12px;
+    margin: 25px auto 0;
+    max-width: 390px;
+    text-align: left;
+}
+
+.wish-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px;
+
+    border: 1px solid #ffffff30;
+    border-radius: 16px;
+
+    background: #ffffff12;
+}
+
+.wish-item span {
+    font-size: 27px;
+}
+
+.wish-i.secret-surprise {
+    margin-top: 25px;
+    text-align: center;
+}
+
+#surpriseBtn {
+    background: linear-gradient(135deg, #ffb347, #ff6b81);
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.hidden-message {
+    display: none;
+    max-width: 350px;
+    margin: 20px auto;
+    padding: 20px;
+    color: white;
+    line-height: 1.8;
+    white-space: pre-line;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,215,150,0.5);
+    border-radius: 18px;
+    animation: messageAppear 1s ease;
+}
+
+.hidden-message.show {
+    display: block;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+tem strong {
+    display: block;
+    color: #ffe2a7;
+    font-family: 'Playfair Display', serif;
+}
+
+.wish-item small {
+    display: block;
+    font-size: 10px;
+    color: #f5e5f5;
+    margin-top: 4px;
+}
+
+/* SLIDE 4 */
+
+.letter {
+    font-size: 70px;
+    margin: 15px;
+}
+
+/* FINAL SLIDE */
+
+.final-diya {
+    font-size: 65px;
+    margin: 15px;
+    animation: float 2s infinite;
+    filter: drop-shadow(0 0 18px #ffcb6a);
+}
+
+.final-love {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-style: italic;
+    color: #ffdc94;
+    line-height: 1.7;
+    margin: 20px;
+}
+
+.signature {
+    font-size: 12px;
+    color: #ffedda;
+    margin: 15px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 19px;
+
+    background: linear-gradient(
+        100deg,
+        #ffe7a4,
+        #ffc65d
+    );
+
+    color: #51205f;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+/* NAVIGATION */
+
+.controls {
+    width: 100%;
+    max-width: 470px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin: 15px 0 25px;
+}
+
+#prevBtn {
+    background: #ffffff18;
+    color: white;
+    border: 1px solid #ffffff40;
+}
+
+button:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    background: #ffffff66;
+    border-radius: 50%;
+}
+
+.dot.active {
+    width: 23px;
+    border-radius: 10px;
+    background: #ffdc94;
+}
+
+footer {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #ffe2b3;
+}
+
+/* ANIMATIONS */
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes flicker {
+    from { transform: scale(.9) rotate(-4deg); }
+    to { transform: scale(1.1) rotate(4deg); }
+}
+
+@keyframes float {
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes heartbeat {
+    50% { transform: scale(1.12); }
+}
+
+@media(max-width: 380px) {
+    .diya-scene {
+        transform: scale(.88);
+        margin: 0 auto -5px;
+    }
+
+    .story {
+        min-height: 530px;
+    }
+
+    .controls {
+        gap: 5px;
+    }
+
+    .controls button {
+        padding: 10px 13px;
+        font-size: 11px;
+    }
+
+    .dots {
+        gap: 5px;
+    }
+}
+
+@media(max-height: 720px) {
+    .story {
+        min-height: 500px;
+    }
+
+    .slide {
+        padding: 12px 8px;
+    }
+
+    .diya-scene {
+        transform: scale(.82);
+        margin: -5px auto -15px;
+    }
+
+    .message {
+        margin: 12px auto;
+    }
+}
+.floating-diyas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.floating-diyas span {
+    position: absolute;
+    bottom: -60px;
+    font-size: 25px;
+    opacity: 0.8;
+    animation: diyaFloat 12s linear infinite;
+}
+
+.floating-diyas span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-diyas span:nth-child(2) { left: 25%; animation-delay: 3s; }
+.floating-diyas span:nth-child(3) { left: 45%; animation-delay: 6s; }
+.floating-diyas span:nth-child(4) { left: 65%; animation-delay: 1s; }
+.floating-diyas span:nth-child(5) { left: 80%; animation-delay: 5s; }
+.floating-diyas span:nth-child(6) { left: 92%; animation-delay: 8s; }
+
+@keyframes diyaFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: 0.8; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+button {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px rgba(255, 190, 80, 0.25);
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 0 22px rgba(255, 190, 80, 0.7);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+.floating-diyas span {
+    filter: drop-shadow(0 0 8px gold);
+    animation-name: diyaFloat, diyaGlow;
+    animation-duration: 12s, 2s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+}
+
+@keyframes diyaGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px orange);
+    }
+    50% {
+        filter: drop-shadow(0 0 20px gold);
+    }
+}
+@media (max-width: 600px) {
+    .slide {
+        padding: 25px 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    button {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .hidden-message {
+        width: 90%;
+        box-sizing: border-box;
+    }
+}
+#welcomeScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #54216f, #160b2b);
+    color: white;
+    padding: 20px;
+    transition: opacity 1s ease;
+}
+
+.welcome-content {
+    max-width: 400px;
+}
+
+.welcome-diya {
+    font-size: 75px;
+    animation: diyaGlow 2s infinite;
+}
+
+.welcome-content h1 {
+    font-size: 38px;
+    color: #ffd580;
+}
+
+.welcome-content p {
+    margin: 20px 0;
+    line-height: 1.7;
+}
+
+#welcomeScreen button {
+    padding: 14px 25px;
+    border: 1px solid gold;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ffb347, #ff6b81);
+    color: white;
+    cursor: pointer;
+}
+
+#welcomeScreen.hide {
+    opacity: 0;
+    pointer-events: none;
+}

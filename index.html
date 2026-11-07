@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Puchki ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="welcomeScreen">
+    <div class="welcome-content">
+        <div class="welcome-diya">🪔</div>
+        <h1>Oyee Paagal! 💗</h1>
+        <p>A little surprise is waiting for you...</p>
+        <button onclick="startSurprise()">
+            ✨ Tap to Begin ✨
+        </button>
+    </div>
+  </div>
+  
+  <div class="floating-diyas">
+  <span>🪔</span>
+  <span>✨</span>
+  <span>🪔</span>
+  <span>✨</span>
+  <span>🪔</span>
+  <span>✨</span>
+  </div>
+  
+
+<canvas id="sparkles"></canvas>
+
+<main class="container">
+
+<header>
+    <span>A LITTLE DIWALI SURPRISE</span>
+    <span id="counter">01 / 05</span>
+</header>
+
+<section class="story">
+
+<!-- SLIDE 1 -->
+
+<div class="slide active">
+
+<p class="eyebrow">A LITTLE SURPRISE FOR YOU</p>
+
+<p class="dedication">For Dr. Sahiba ♡</p>
+
+<h1>
+This Diwali,<br>
+<span>the first light is yours.</span>
+</h1>
+
+<p class="subtitle">
+Some people make life brighter,
+just by being in it.
+</p>
+
+<div class="diya-scene">
+    <div class="ring ring1"></div>
+    <div class="ring ring2"></div>
+    <div class="lotus">✿</div>
+    <div class="flame"></div>
+    <div class="diya">🪔</div>
+    <span class="float f1">🪔</span>
+    <span class="float f2">🪔</span>
+    <span class="float f3">✨</span>
+    <span class="float f4">✨</span>
+</div>
+
+<p class="wish-line">
+A little light, especially for you.
+</p>
+
+</div>
+
+
+<!-- SLIDE 2 -->
+
+<div class="slide">
+
+<p class="eyebrow">JUST A LITTLE REMINDER</p>
+
+<div class="heart">♡</div>
+
+<h2>
+O Devi ji,<br>
+<span>you are special.</span>
+</h2>
+
+<p class="message">
+Not because of one big thing,
+but because of all the little things
+that make you YOU.
+
+Your smile, your presence,
+your silly moments and the happiness
+you bring without even trying.
+
+Never forget how lovely you are.
+</p>
+
+<p class="highlight">
+You make ordinary moments beautiful. ❤️
+</p>
+
+</div>
+
+
+<!-- SLIDE 3 -->
+
+<div class="slide">
+
+<p class="eyebrow">IF I COULD GIFT YOU THE WORLD</p>
+
+<h2>I'd wish you...</h2>
+
+<div class="wish-list">
+
+<div class="wish-item">
+<span>🌷</span>
+<div>
+<strong>Peace</strong>
+<small>For every thought that keeps you awake.</small>
+</div>
+</div>
+
+<div class="wish-item">
+<span>🌟</span>
+<div>
+<strong>Confidence</strong>
+<small>To chase every dream in your heart.</small>
+</div>
+</div>
+
+<div class="wish-item">
+<span>🦋</span>
+<div>
+<strong>Happiness</strong>
+<small>That stays even on ordinary days.</small>
+</div>
+</div>
+
+<div class="wish-item">
+<span>💗</span>
+<div>
+<strong>Love</strong>
+<small>From people who make you feel valued.</small>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SLIDE 4 -->
+
+<div class="slide">
+
+<p class="eyebrow">A NOTE FROM INQUISITOR'S HEART</p>
+
+<div class="letter">💌</div>
+
+<h2>
+One thing I hope<br>
+<span>you always remember...</span>
+</h2>
+
+<p class="message">
+Life won't always be perfect,
+and not every day will sparkle.
+
+But I hope you never doubt
+that you deserve kindness,
+care, respect and every beautiful
+opportunity waiting for you.
+
+On your brightest days
+and your quietest ones,
+keep being wonderfully YOU.
+</p>
+
+<p class="highlight">
+You deserve all the happiness. ♡
+</p>
+
+</div>
+  
+
+<!-- SLIDE 5 -->
+
+<div class="slide final-slide">
+
+<p class="eyebrow">AND FINALLY...</p>
+
+<div class="final-diya">🪔</div>
+
+<h2>
+Happy Diwali,<br>
+<span>Puchki!</span> ❤️
+</h2>
+
+<p class="message">
+May your home glow with warmth,
+your heart overflow with happiness
+and your future shine with
+beautiful possibilities.
+
+May every diya bring a smile
+and every sparkle bring a new hope.
+</p>
+
+<p class="final-love">
+Sending you a big hug<br>
+and lots of love. ♡
+</p>
+
+<p class="signature">
+With love, always ✨
+</p>
+
+<button id="replayBtn">Read it again ↻</button>
+
+</div>
+<div class="secret-surprise">
+    <button id="surpriseBtn" onclick="revealSurprise()">
+        💌 Open Your Secret Surprise
+    </button>
+
+    <p id="secretMessage" class="hidden-message">
+        O Pagliii! 💗
+
+        You are one of those beautiful people
+        who make ordinary moments special.
+
+        May your life always shine brighter
+        than a thousand diyas. ✨
+
+        Stay happy, stay magical! ❤️
+    </p>
+</div>
+</section>
+
+
+<!-- NAVIGATION -->
+
+<nav class="controls">
+
+<button id="prevBtn" disabled>← Back</button>
+
+<div class="dots">
+    <button class="dot active"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
+</div>
+
+<button id="nextBtn">Next ✦</button>
+
+</nav>
+
+<footer>
+MADE WITH ♡ FOR PUCHKI ~By: Sergeant Scorpion
+</footer>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
